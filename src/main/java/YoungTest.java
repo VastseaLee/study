@@ -9,11 +9,9 @@ import java.util.Map;
 @Yann
 public class YoungTest {
     public static void main(String[] args) {
-        User user = new User();
-        user.setName("l");
-        user.setAge(0);
-        change(user);
-        System.out.println(user);
+       char a = 'a';
+       char b = 'a';
+        System.out.println();
     }
 
     public static void change(User user) {
