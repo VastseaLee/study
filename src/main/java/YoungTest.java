@@ -1,30 +1,32 @@
 import annotation.Yann;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 
+import java.lang.ref.PhantomReference;
 import java.util.*;
+import java.util.regex.Pattern;
+
 
 @Yann
 public class YoungTest {
-    public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>(null);
-        list.add(1);
-        list.add(2);
-        List<Integer> list1 = new ArrayList<>(list);
-        List<Integer> list2 = new ArrayList<>(list);
-        list1.add(3);
-        System.out.println(list);
+    int a;
 
+    public static void main(String[] args) {
+        String date = new StringBuilder("2019-05-12").append(" ").toString();
+        System.out.println(date+"00:00:00");
     }
 
-    public static void change(User user) {
-        for (int i = 100; ; i++) {
-            for (int j = 10; j < i; j++) {
-                if (i / j == j) {
 
-                }
-            }
-        }
+}
+
+class MyMap extends LinkedHashMap {
+    private final int MAX_SIZE;
+
+    public MyMap(int initialCapacity) {
+        super(initialCapacity, 0.75f, true);
+        MAX_SIZE = initialCapacity;
+    }
+
+    @Override
+    protected boolean removeEldestEntry(Map.Entry eldest) {
+        return size() > MAX_SIZE;
     }
 }
