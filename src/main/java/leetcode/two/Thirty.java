@@ -11,7 +11,22 @@ import leetcode.TreeNode;
  * 如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化 kthSmallest 函数？
  */
 public class Thirty {
+    int index = 1;
+    int result = 0;
+
     public int kthSmallest(TreeNode root, int k) {
-return 0;
+        f(root,k);
+        return result;
+    }
+
+    private void f(TreeNode root, int k) {
+        if(root == null){
+            return;
+        }
+        f(root.left,k);
+        if(index++ == k){
+            result =  root.val;
+        }
+        f(root.right,k);
     }
 }

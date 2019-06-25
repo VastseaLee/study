@@ -7,13 +7,25 @@ import java.util.regex.Pattern;
 
 @Yann
 public class YoungTest {
-    int a;
+    int a = 20;
 
     public static void main(String[] args) {
-        String date = new StringBuilder("2019-05-12").append(" ").toString();
-        System.out.println(date+"00:00:00");
+
     }
 
+    public String showMap(Map map) {
+        if (map == null || map.isEmpty()) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder();
+        map.forEach((k, v) -> {
+            sb.append(";");
+            sb.append(k);
+            sb.append(":");
+            sb.append(v);
+        });
+        return sb.substring(1);
+    }
 
 }
 
